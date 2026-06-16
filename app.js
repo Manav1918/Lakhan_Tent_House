@@ -114,7 +114,7 @@ const translations = {
     contact_address_title: "कार्यालय का पता",
     contact_address_desc: "लखन टेंट हाउस एंड साउंड, सिंहरावां (जीटी रोड के पास), बरही रोड, हजारीबाग, झारखंड - 825405",
     contact_phone_title: "कॉल करें / व्हाट्सएप करें",
-    contact_phone_desc: "+91 99311 06136, +91 91993 11061",
+    contact_phone_desc: "+91 99311 06136, +91 62017 21220",
     contact_hours_title: "कार्यालय का समय",
     contact_hours_desc: "प्रतिदिन सुबह 08:00 बजे से रात 10:00 बजे तक (सप्ताह के सातों दिन)",
     
@@ -266,7 +266,7 @@ const translations = {
     contact_address_title: "Office Address",
     contact_address_desc: "Lakhan Tent House & Sound, Singhrawan (Near GT Road), Barhi Road, Hazaribagh, Jharkhand - 825405",
     contact_phone_title: "Call / WhatsApp Us",
-    contact_phone_desc: "+91 99311 06136, +91 91993 11061",
+    contact_phone_desc: "+91 99311 06136, +91 62017 21220",
     contact_hours_title: "Business Hours",
     contact_hours_desc: "Every day 08:00 AM to 10:00 PM (7 days a week)",
     
