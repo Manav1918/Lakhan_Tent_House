@@ -172,7 +172,7 @@ const translations = {
     
     // About
     about_subtitle: "Lakhan Tent House & Sound",
-    about_title: "Crafting Your Celebrations for 10+ Years",
+    about_title: "Crafting Your Celebrations for 30+ Years",
     about_p1: "Lakhan Tent House & Sound (Singhrawan, Hazaribagh) is a trusted and reputed firm in Jharkhand for weddings, engagements, birthday parties, religious festivals, and all kinds of social and cultural gatherings.",
     about_p2: "We do not just provide beautiful tents, but we also offer premium audio setups, dazzling stage lighting, and top-tier catering services. Our goal is to deliver the most stunning setups customized within your budget.",
     about_hl1_title: "Premium Decoration",
