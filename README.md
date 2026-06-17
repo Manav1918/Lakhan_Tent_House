@@ -3,12 +3,13 @@
   <h1>🎪 Lakhan Tent House & Sound</h1>
   <p><strong>Premium Event Decoration & Sound Services in Hazaribagh</strong></p>
 
-  <p>
-    <a href="#features"><img src="https://img.shields.io/badge/✨_Features-183059?style=for-the-badge" alt="Features"></a>
-    <a href="#tech-stack"><img src="https://img.shields.io/badge/🛠️_Tech_Stack-5B0612?style=for-the-badge" alt="Tech Stack"></a>
-    <a href="#getting-started"><img src="https://img.shields.io/badge/🚀_Getting_Started-183059?style=for-the-badge" alt="Getting Started"></a>
-    <a href="#contact-us"><img src="https://img.shields.io/badge/📍_Contact_Us-5B0612?style=for-the-badge" alt="Contact Us"></a>
-  </p>
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Bootstrap_Icons-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Icons">
+  <img src="https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Google Fonts">
+</p>
 </div>
 
 ---
@@ -19,12 +20,26 @@
 
 ## ✨ Features
 
+### 💻 Web App Features
 - **🌐 Bilingual Support:** Seamlessly switch between English and Hindi using a custom-built translation engine.
 - **📱 Fully Responsive:** Carefully crafted layouts that look perfect on desktops, tablets, and mobile devices.
-- **🎨 Premium UI/UX:** Features a luxurious color palette (maroon and gold), smooth CSS animations, glassmorphism effects, and premium font pairings.
-- **✅ Verified Customer Portal:** A gamified tracker that simulates event bookings and grants verified customer status using `localStorage`.
-- **✍️ Authentic Signatures:** Elegant, generated cursive signatures blended perfectly into the design using CSS `mix-blend-mode`.
+- **🎨 Premium UI/UX:** Features a luxurious color palette (maroon and gold), smooth CSS animations, and premium font pairings.
+- **✅ Verified Customer Portal:** A gamified tracker that manages your booking count and unlocks exclusive customer status.
+- **✍️ Authentic Details:** Realistic cursive signature integrations via CSS blending modes to enhance trust and aesthetics.
 - **📸 Dynamic Gallery:** A beautiful grid gallery showcasing previous premium events and decorations.
+
+### 🏢 Company Highlights
+- **🏆 Proven Excellence:** Years of experience making thousands of events grand and memorable in Hazaribagh.
+- **🤝 Trust & Reliability:** A dedicated, professional team committed to delivering on-time, high-quality event setups.
+- **💎 Premium Inventory:** Utilizing only top-tier materials, authentic flowers, and industry-standard lighting/sound systems.
+- **📞 Quick Support:** Dedicated contact channels via Call or WhatsApp for seamless event planning and coordination.
+
+### 🎪 Services Offered
+- **⛺ Tent Decoration:** From luxurious waterproof pandals to modern canopy setups with elegant draping.
+- **🎵 DJ & Sound:** Heart-pounding, crystal-clear audio systems and professional DJs for sangeets, weddings, and parties.
+- **🌸 Stage & Flowers:** Jaw-dropping stage backdrops decorated with fresh, exotic floral arrangements.
+- **💡 Grand Lighting:** Cinematic ambiance creation through ambient uplighting, LED screens, and moving headlights.
+- **🍽️ Premium Catering:** Complete food setups including buffet stations, dining arrangements, and VIP seating.
 
 ## 🛠️ Tech Stack
 
