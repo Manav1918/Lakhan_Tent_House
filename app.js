@@ -64,7 +64,7 @@ const translations = {
     service_catering_desc: "सफाई के साथ तैयार किया गया स्वादिष्ट शाकाहारी और मांसाहारी भोजन, फैंसी क्रॉकरी, और आकर्षक फूड स्टॉल व वेटर सर्विस।",
     service_catering_f1: "स्वादिष्ट व्यंजन (शाकाहारी/मांसाहारी)",
     service_catering_f2: "प्रीमियम क्रॉकरी और टेबल सजावट",
-    service_catering_f3: "ट्रेन और वेल-ड्रेस्ड वेटर स्टाफ",
+    service_catering_f3: "ट्रेन्ड और वेल-ड्रेस्ड वेटर स्टाफ",
     
     // Gallery
     gallery_title: "हमारा कार्य गैलरी",
@@ -117,6 +117,8 @@ const translations = {
     contact_phone_desc: "+91 99311 06136, +91 62017 21220",
     contact_hours_title: "कार्यालय का समय",
     contact_hours_desc: "प्रतिदिन सुबह 08:00 बजे से रात 10:00 बजे तक (सप्ताह के सातों दिन)",
+    contact_map_link: "Google Map पर खोलें",
+    contact_wa_link: "सीधे चैट करें (WhatsApp)",
     
     // Footer
     footer_desc: "लखन टेंट हाउस एंड साउंड झारखंड के हजारीबाग में अग्रणी टेंट, स्टेज, लाइट और साउंड डेकोरेटर हैं। हम आपकी खुशियों के अवसरों को भव्य और यादगार बनाते हैं।",
@@ -152,7 +154,9 @@ const translations = {
     valid_phone: "कृपया वैध मोबाइल नंबर दर्ज करें",
     valid_date: "कृपया इवेंट की तारीख चुनें",
     valid_location: "कृपया इवेंट का स्थान दर्ज करें",
-    valid_services: "कृपया कम से कम एक सेवा का चयन करें"
+    valid_services: "कृपया कम से कम एक सेवा का चयन करें",
+    tracker_email_label: "ईमेल आईडी",
+    tracker_email_placeholder: "जैसे: email@domain.com"
   },
   en: {
     // Navigation
@@ -269,6 +273,8 @@ const translations = {
     contact_phone_desc: "+91 99311 06136, +91 62017 21220",
     contact_hours_title: "Business Hours",
     contact_hours_desc: "Every day 08:00 AM to 10:00 PM (7 days a week)",
+    contact_map_link: "Open on Google Map",
+    contact_wa_link: "Chat Directly (WhatsApp)",
     
     // Footer
     footer_desc: "Lakhan Tent House & Sound is a premier tent, stage, sound, and lighting organizer in Hazaribagh, Jharkhand. We make your celebrations majestic and memorable.",
@@ -304,7 +310,9 @@ const translations = {
     valid_phone: "Please enter a valid mobile number",
     valid_date: "Please select an event date",
     valid_location: "Please enter event location",
-    valid_services: "Please select at least one service"
+    valid_services: "Please select at least one service",
+    tracker_email_label: "Email Address",
+    tracker_email_placeholder: "e.g.: email@domain.com"
   }
 };
 
@@ -395,6 +403,15 @@ document.addEventListener("DOMContentLoaded", () => {
       tag.classList.toggle("selected");
     });
   });
+  // IntersectionObserver for fade-section animations
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-section').forEach(el => fadeObserver.observe(el));
 
   // Form Submission Logic -> Whatsapp API
   const bookingForm = document.getElementById("bookingForm");
@@ -612,6 +629,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Re-run tracker checker initially
   renderTrackerDashboard();
+  // Add fade-section to dynamically selected elements
+  document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
+    el.classList.add('fade-section');
+  });
+
+  // Button ripple effect
+  const heroButtons = document.querySelectorAll('.hero-btn');
+  heroButtons.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      const x = e.clientX - e.target.getBoundingClientRect().left;
+      const y = e.clientY - e.target.getBoundingClientRect().top;
+      
+      const ripples = document.createElement('span');
+      ripples.style.left = x + 'px';
+      ripples.style.top = y + 'px';
+      ripples.classList.add('ripple');
+      
+      this.appendChild(ripples);
+      
+      setTimeout(() => {
+        ripples.remove();
+      }, 600);
+    });
+  });
+
+  // Scroll animation observer
+  const fadeSections = document.querySelectorAll('.fade-section');
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeSections.forEach(el => observer.observe(el));
 });
 
 // Update page content based on language

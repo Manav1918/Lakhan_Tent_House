@@ -1,7 +1,7 @@
 /* Lakhan Tent House & Sound - Premium Style Sheets */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Yatra+One&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Yatra+One&family=Great+Vibes&family=Caveat&family=Dancing+Script&display=swap');
 
 /* Design Tokens & Variables */
 :root {
@@ -111,6 +111,102 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Enhanced Hero Button Styles */
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Marcellus', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.hero-btn.btn-book {
+  background: linear-gradient(135deg, var(--gold) 0%, #ffdf00 100%);
+  color: var(--maroon-dark);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  border: none;
+}
+
+.hero-btn.btn-services {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.hero-btn.btn-book:hover {
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  color: var(--charcoal);
+}
+
+.hero-btn.btn-services:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.hero-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Ripple Animation JS CSS */
+.hero-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.hero-btn.btn-book .ripple {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Fade-in animation for sections */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: none;
+}
+
 .btn-premium:hover {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: var(--maroon-dark);
@@ -193,11 +289,39 @@ header.scrolled {
 
 .logo-section h1 span {
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   display: block;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.logo-section {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+#mainLogo {
+  margin: 0;
+  line-height: 1.1;
+  font-size: 1.6rem;
+}
+
+/* Nav Book Now Button */
+.nav-book-btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -215,6 +339,9 @@ header.scrolled {
   margin: 0 0.2rem;
   transition: var(--transition-smooth);
   position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .nav-item a:hover {
@@ -348,7 +475,7 @@ header.scrolled {
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center;
+  align-items: stretch;
 }
 
 .about-img-container {
@@ -358,11 +485,13 @@ header.scrolled {
   background: var(--white);
   box-shadow: var(--box-shadow-premium);
   border-radius: 8px;
+  height: 100%;
 }
 
 .about-img-container img {
   width: 100%;
-  height: 450px;
+  height: 100%;
+  min-height: 450px;
   object-fit: cover;
   display: block;
   border-radius: 4px;
@@ -383,6 +512,11 @@ header.scrolled {
   margin-bottom: 1.5rem;
   color: var(--text-dark);
   font-size: 1.05rem;
+}
+
+.about-main-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-highlights {
@@ -560,6 +694,7 @@ header.scrolled {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .gallery-item img {
@@ -605,6 +740,23 @@ header.scrolled {
   font-size: 0.85rem;
   font-weight: 300;
   letter-spacing: 1px;
+}
+
+/* Image Filter Utility Classes */
+.img-hue-shift {
+  filter: hue-rotate(90deg);
+}
+
+.img-hue-invert {
+  filter: hue-rotate(180deg);
+}
+
+.img-warm-tone {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.img-vivid {
+  filter: saturate(1.2);
 }
 
 /* Booking Section */
@@ -654,6 +806,8 @@ header.scrolled {
   font-size: 1rem;
   color: var(--text-dark);
   transition: var(--transition-smooth);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-control-premium:focus {
@@ -800,6 +954,14 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
 .footer-links h4, .footer-contact h4 {
   color: var(--gold);
   font-size: 1.2rem;
@@ -941,6 +1103,10 @@ footer {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -950,6 +1116,10 @@ footer {
   
   .mobile-nav-toggle {
     display: block;
+  }
+
+  .nav-book-btn {
+    display: none;
   }
   
   .nav-menu {
@@ -1029,7 +1199,7 @@ footer {
 
 .verified-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto 5rem;
@@ -1124,13 +1294,15 @@ footer {
   margin-right: 1.5rem;
 }
 
-.signature-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  color: #183059; /* Blue ink color */
+.signature-img {
+  height: 80px;
+  width: auto;
   user-select: none;
-  transform: rotate(-5deg);
-  display: inline-block;
+  mix-blend-mode: multiply;
+  filter: contrast(2.5) brightness(1.2) saturate(1.5);
+  transform: rotate(-3deg) scale(1.8);
+  opacity: 0.9;
+  margin-right: 15px; /* Add some space so the scale doesn't overlap text */
 }
 
 /* Become Verified Portal Layout */
@@ -1282,5 +1454,33 @@ footer {
   
   .portal-info, .portal-tracker {
     padding: 3rem 1.5rem;
+  }
+
+  .portal-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .portal-info p {
+    font-size: 0.95rem;
+  }
+
+  .benefit-list li {
+    font-size: 0.85rem;
+  }
+
+  .tracker-title {
+    font-size: 1.3rem;
+  }
+
+  .tracker-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-info, .portal-tracker {
+    padding: 2rem 1.2rem;
   }
 }
